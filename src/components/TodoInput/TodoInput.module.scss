@@ -29,9 +29,14 @@
         border: none;
         flex: 1;
         margin-left: 20px;
+        color: $darkBlue;
 
         &:focus {
             outline: none;
+        }
+
+        &::placeholder {
+            color: $darkGrayishBlue;
         }
     }
 }
