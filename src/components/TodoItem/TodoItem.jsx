@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from './TodoItem.module.scss';
+import { useDispatch } from 'react-redux';
+import { setCheck } from '../../features/todoSlice';
 
 const TodoItem = ({ name, done, id }) => {
 
-    const handleCheck = () => {
+    const dispatch = useDispatch();
 
+    const handleCheck = () => {
+        dispatch(setCheck(id));
     }
 
     return (

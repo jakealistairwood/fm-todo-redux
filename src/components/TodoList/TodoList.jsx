@@ -11,7 +11,7 @@ const TodoList = () => {
     const todosLeft = todos.length + " items left";
 
     return (
-        <div className={styles.todoList}>
+        <div className={`${styles.todoList} ${styles.container}`}>
             {
                 todos.map(todo => (
                     <TodoItem name={todo.item} done={todo.done} key={todo.id} id={todo.id} />
@@ -19,6 +19,12 @@ const TodoList = () => {
             }
             <div className={styles.todoList__footer}>
                 <p>{todosLeft}</p>
+                <div className={styles.footer__todoStates}>
+                    <small>All</small>
+                    <small>Active</small>
+                    <small>Completed</small>
+                </div>
+                <p>Clear Completed</p>
             </div>
         </div>
     )

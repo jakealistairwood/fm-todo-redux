@@ -1,10 +1,5 @@
 @import '../../assets/scss/main';
 
-.container {
-    width: 60%;
-    margin: 0 auto;
-}
-
 .todoInput {
     height: 64px;
     background-color: white;
@@ -25,6 +20,8 @@
         color: #E3E4F1;
         height: 30px;
         width: 30px;
+        outline: none;
+        cursor: pointer;
     }
 
     input {

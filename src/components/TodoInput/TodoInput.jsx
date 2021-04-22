@@ -14,6 +14,7 @@ const TodoInput = () => {
             done: false,
             id: Date.now()
         }))
+        setTodo('');
     }
 
     return (

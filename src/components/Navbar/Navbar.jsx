@@ -4,7 +4,7 @@ import styles from './Navbar.module.scss';
 const Navbar = () => {
     return (
         <nav className={styles.navbar}>
-            <div className={styles.navbar__container}>
+            <div className={`${styles.navbar__container} ${styles.container}`}>
                 <h1>Todo</h1>
                 <p>Switch</p>
             </div>
