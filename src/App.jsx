@@ -1,6 +1,6 @@
 import React from 'react';
 import TodoInput from './components/TodoInput';
-import './App.css';
+import './App.scss';
 
 const App = () => {
   return (
