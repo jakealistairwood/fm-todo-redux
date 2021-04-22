@@ -1,0 +1,13 @@
+@import '../../assets/scss/main';
+
+.todoItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #E3E4F1;
+    padding: 10px 20px;
+
+    p {
+        margin-left: 20px;
+    }
+}
