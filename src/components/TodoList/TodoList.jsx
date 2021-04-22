@@ -1,12 +1,18 @@
 import React from 'react';
 import styles from './TodoList.module.scss';
-import { useSelector } from 'react-redux'; // <-- useSelector grabs the state from Redux whereas useDispatch pushes the data
-import { selectTodoList } from '../../features/todoSlice';
+import { useDispatch, useSelector } from 'react-redux'; // <-- useSelector grabs the state from Redux whereas useDispatch pushes the data
+import { selectTodoList, clearTodos } from '../../features/todoSlice';
 import TodoItem from '../TodoItem';
 
 const TodoList = () => {
 
     const todos = useSelector(selectTodoList);
+
+    const dispatch = useDispatch();
+
+    const resetTodos = () => {
+        dispatch(clearTodos());
+    }
 
     const todosLeft = todos.length + " items left";
 
@@ -24,7 +30,7 @@ const TodoList = () => {
                     <small>Active</small>
                     <small>Completed</small>
                 </div>
-                <p>Clear Completed</p>
+                <p onClick={resetTodos}>Clear Completed</p>
             </div>
         </div>
     )

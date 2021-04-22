@@ -23,11 +23,14 @@ const todoSlice = createSlice({
                     }
                 }
             })
+        },
+        clearTodos: (state, action) => {
+            state.todoList = [];
         }
     }
 });
 
-export const { saveTodo, setCheck } = todoSlice.actions;
+export const { saveTodo, setCheck, clearTodos } = todoSlice.actions;
 
 export const selectTodoList = state => state.todos.todoList;
 

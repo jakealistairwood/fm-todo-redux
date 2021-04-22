@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TodoItem.module.scss';
 import { useDispatch } from 'react-redux';
-import { setCheck } from '../../features/todoSlice';
+import { setCheck, clearTodos } from '../../features/todoSlice';
 
 const TodoItem = ({ name, done, id }) => {
 
@@ -11,10 +11,12 @@ const TodoItem = ({ name, done, id }) => {
         dispatch(setCheck(id));
     }
 
+    const inputChecked = done ? styles.checked : "";
+
     return (
         <div className={styles.todoItem}>
-            <input type="checkbox" checked={done} onChange={handleCheck} />
-            <p>{name}</p>
+            <input className={styles.todoItem__input} type="checkbox" checked={done} onChange={handleCheck} />
+            <p className={`${styles.todo__name} ${inputChecked}`}>{name}</p>
         </div>
     )
 }
