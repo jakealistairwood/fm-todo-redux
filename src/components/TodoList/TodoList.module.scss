@@ -4,7 +4,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 220px;
+    top: 280px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,10 +21,27 @@
         padding: 10px 20px;
         height: 64px;
 
+        p {
+            color: #9495A5;
+            font-size: 0.8rem;
+        }
+
         .footer__todoStates {
             small {
                 margin: 0 10px;
+                font-weight: 700;
+                color: #9495A5;
+                font-size: 0.8rem;
             }
+        }
+
+        button {
+            color: #9495A5;
+            font-size: 0.8rem;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
         }
     }
 }

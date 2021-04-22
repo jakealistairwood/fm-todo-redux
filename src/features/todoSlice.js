@@ -26,7 +26,14 @@ const todoSlice = createSlice({
         },
         clearTodos: (state, action) => {
             state.todoList = [];
-        }
+        },
+        // clearTodos: (state, action) => {
+        //     state.todoList.filter(item => {
+        //         if(item.done === true) {
+
+        //         }
+        //     })
+        // }
     }
 });
 

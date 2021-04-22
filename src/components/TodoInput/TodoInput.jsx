@@ -9,7 +9,6 @@ const TodoInput = () => {
 
     const addTodo = () => {
         if(todo.length > 0) {
-            console.log(`Adding ${todo}`);
             dispatch(saveTodo({
                 item: todo,
                 done: false,

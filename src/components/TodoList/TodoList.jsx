@@ -30,7 +30,7 @@ const TodoList = () => {
                     <small>Active</small>
                     <small>Completed</small>
                 </div>
-                <p onClick={resetTodos}>Clear Completed</p>
+                <button onClick={resetTodos}>Clear Completed</button>
             </div>
         </div>
     )
