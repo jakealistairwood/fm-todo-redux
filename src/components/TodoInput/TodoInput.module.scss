@@ -1,0 +1,40 @@
+@import '../../assets/scss/main';
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.todoInput {
+    height: 64px;
+    background-color: white;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+
+    button {
+        border: 1px solid #E3E4F1;
+        background: none;
+        border-radius: 50%;
+        color: #E3E4F1;
+        height: 30px;
+        width: 30px;
+    }
+
+    input {
+        background: none;
+        border: none;
+        flex: 1;
+        margin-left: 20px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
