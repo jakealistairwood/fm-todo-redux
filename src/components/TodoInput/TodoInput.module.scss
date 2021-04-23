@@ -2,7 +2,7 @@
 
 .todoInput {
     height: 64px;
-    background-color: white;
+    // background-color: white;
     border-radius: 5px;
     position: absolute;
     left: 50%;
@@ -14,10 +14,8 @@
     padding: 10px 20px;
 
     button {
-        border: 1px solid #E3E4F1;
         background: none;
         border-radius: 50%;
-        color: #E3E4F1;
         height: 30px;
         width: 30px;
         outline: none;
@@ -29,14 +27,9 @@
         border: none;
         flex: 1;
         margin-left: 20px;
-        color: $darkBlue;
 
         &:focus {
             outline: none;
-        }
-
-        &::placeholder {
-            color: $darkGrayishBlue;
         }
     }
 }

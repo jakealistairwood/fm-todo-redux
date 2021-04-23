@@ -3,6 +3,11 @@ import styles from './TodoList.module.scss';
 import { useDispatch, useSelector } from 'react-redux'; // <-- useSelector grabs the state from Redux whereas useDispatch pushes the data
 import { selectTodoList, clearTodos } from '../../features/todoSlice';
 import TodoItem from '../TodoItem';
+import styled from 'styled-components';
+
+const StyledDiv = styled.div`
+    background-color: ${props => props.theme.todosBg}
+`
 
 const TodoList = () => {
 
@@ -17,7 +22,7 @@ const TodoList = () => {
     const todosLeft = todos.length + " items left";
 
     return (
-        <div className={`${styles.todoList} ${styles.container}`}>
+        <StyledDiv className={`${styles.todoList} ${styles.container}`}>
             {
                 todos.map(todo => (
                     <TodoItem name={todo.item} done={todo.done} key={todo.id} id={todo.id} />
@@ -32,7 +37,7 @@ const TodoList = () => {
                 </div>
                 <button onClick={resetTodos}>Clear Completed</button>
             </div>
-        </div>
+        </StyledDiv>
     )
 }
 

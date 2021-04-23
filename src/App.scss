@@ -6,9 +6,5 @@
   box-sizing: border-box;
   font-size: 18px;
   font-family: $primaryFont;
-}
-.app {
-  height: 100vh;
-  width: 100vw;
-  background-color: #FAFAFA;
+  transition: 0.3s ease-in-out;
 }
