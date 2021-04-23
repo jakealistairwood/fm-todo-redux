@@ -8,7 +8,7 @@ const StyledNav = styled.nav`
     background-image: url(${props => props.theme.bannerImg});
 
     @media screen and (max-width: 500px) {
-        background-image: url(${props => props.theme.bannerImgMobile});
+        background-image: url(${props => props.theme.bannerImgMob});
     }
 `
 
