@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from './TodoInput.module.scss';
 import { useDispatch } from 'react-redux';
-import { saveTodo } from '../../features/todoSlice';
+import { createTodo } from '../../features/todoSlice';
 import styled from 'styled-components';
 
-const StyledDiv = styled.div`
+const StyledForm = styled.form`
     background-color: ${props => props.theme.todosBg}
 `
 
@@ -25,35 +25,27 @@ const TodoInput = () => {
     const [ todo, setTodo ] = useState('');
     const dispatch = useDispatch();
 
-    const addTodo = () => {
-        if(todo.length > 0) {
-            dispatch(saveTodo({
-                item: todo,
-                done: false,
-                id: Date.now()
-            }))
-            setTodo('');
-        } else {
-            return;
-        }
-    }
-
-    const handleKeyPress = (e) => {
-        if(e.key === 'Enter') {
-            addTodo();
-        }
+    const onSubmit = (e) => {
+        e.preventDefault();
+        dispatch(
+            createTodo({
+                title: todo
+            })
+        );
     }
 
     return (
-        <StyledDiv className={`${styles.todoInput} ${styles.container}`}>
-            <StyledButton onClick={addTodo}>+</StyledButton>
+        <StyledForm 
+            className={`${styles.todoInput} ${styles.container}`}
+            onSubmit={onSubmit}
+        >
+            <StyledButton type='submit'>+</StyledButton>
             <StyledInput 
                 type="text" 
                 value={todo} 
-                onChange={e => setTodo(e.target.value)} 
-                onKeyDown={handleKeyPress}
+                onChange={e => setTodo(e.target.value)}
                 placeholder="Create a new todo..." />
-        </StyledDiv>
+        </StyledForm>
     )
 }
 
