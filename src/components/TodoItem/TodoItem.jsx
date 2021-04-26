@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TodoItem.module.scss';
 import { useDispatch } from 'react-redux';
-import { toggleCompletedTodo } from '../../features/todoSlice';
+import { toggleCompletedTodo, deleteTodo } from '../../features/todoSlice';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
@@ -24,6 +24,14 @@ const TodoItem = ({ title, completed, id }) => {
             })
         )
     };
+    
+    const handleDelete = () => {
+        dispatch(
+            deleteTodo({
+                id: id
+            })
+        );
+    }
 
     const inputChecked = completed ? styles.checked : "";
 
@@ -38,7 +46,7 @@ const TodoItem = ({ title, completed, id }) => {
                 />
                 <StyledTodoName className={`${styles.todo__name} ${inputChecked}`}>{title}</StyledTodoName>
             </div>
-            <button onClick="delete">X</button>
+            <button onClick={handleDelete}>X</button>
         </StyledDiv>
     )
 }
