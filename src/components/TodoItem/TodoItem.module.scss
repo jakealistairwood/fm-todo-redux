@@ -4,15 +4,39 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     border-bottom: 1px solid #E3E4F1;
     padding: 10px 20px;
     height: 64px;
 
-    p {
-        margin-left: 20px;
+    div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        p {
+            margin-left: 20px;
+        }
+    
+        .checked {
+            text-decoration: line-through;
+        }
     }
 
-    .checked {
-        text-decoration: line-through;
+    &:hover {
+        cursor: pointer;
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    button {
+        display: none;
     }
 }

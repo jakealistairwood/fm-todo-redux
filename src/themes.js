@@ -13,6 +13,7 @@ export const lightMode = {
     footerTextColor: '#9495A5',
     bannerImg: `${BannerImgLight}`,
     bannerImgMob: `${BannerImgMobileLight}`,
+    svgFill: '#494C6B'
 }
 
 export const darkMode = {
@@ -24,5 +25,6 @@ export const darkMode = {
     placeholderTextColor: '#767992',
     footerTextColor: '#5B5E7E',
     bannerImg: `${BannerImgDark}`,
-    bannerImgMob: `${BannerImgMobileDark}`
+    bannerImgMob: `${BannerImgMobileDark}`,
+    svgFill: '#5B5E7E'
 }
