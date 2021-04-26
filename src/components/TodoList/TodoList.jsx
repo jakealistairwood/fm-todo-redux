@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './TodoList.module.scss';
-import { useDispatch, useSelector } from 'react-redux'; // <-- useSelector grabs the state from Redux whereas useDispatch pushes the data
-// import { selectTodoList, clearTodos } from '../../features/todoSlice';
+import { useSelector } from 'react-redux';
 import TodoItem from '../TodoItem';
 import styled from 'styled-components';
 
@@ -11,22 +10,14 @@ const StyledDiv = styled.div`
 
 const TodoList = () => {
 
-    // const todos = useSelector(selectTodoList);
-
-    const dispatch = useDispatch();
-
-    // const resetTodos = () => {
-    //     dispatch(clearTodos());
-    // }
-
-    // const todosLeft = todos.length + " items left";
+    const todos = useSelector(state => state.todos);
 
     return (
         <StyledDiv className={`${styles.todoList} ${styles.container}`}>
             {
-                // todos.map(todo => (
-                //     <TodoItem name={todo.item} done={todo.done} key={todo.id} id={todo.id} />
-                // ))
+                todos.map(todo => (
+                    <TodoItem title={todo.title} completed={todo.completed} key={todo.id} id={todo.id} />
+                ))
             }
             <div className={styles.todoList__footer}>
                 <p>todos left</p>
