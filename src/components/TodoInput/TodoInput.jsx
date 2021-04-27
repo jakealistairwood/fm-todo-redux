@@ -26,13 +26,17 @@ const TodoInput = () => {
     const dispatch = useDispatch();
 
     const onSubmit = (e) => {
-        e.preventDefault();
-        dispatch(
-            createTodo({
-                title: todo
-            })
-        );
-        setTodo('');
+        if(todo.length > 0) {
+            e.preventDefault();
+            dispatch(
+                createTodo({
+                    title: todo
+                })
+            );
+            setTodo('');
+        } else {
+            e.preventDefault();
+        }
     }
 
     return (

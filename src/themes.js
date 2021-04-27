@@ -1,3 +1,4 @@
+import { createGlobalStyle } from 'styled-components';
 import BannerImgLight from './assets/imgs/bg-desktop-light.jpg';
 import BannerImgDark from './assets/imgs/bg-desktop-dark.jpg';
 import BannerImgMobileDark from './assets/imgs/bg-mobile-dark.jpg';
@@ -28,3 +29,9 @@ export const darkMode = {
     bannerImgMob: `${BannerImgMobileDark}`,
     svgFill: '#5B5E7E'
 }
+
+export const GlobalStyles = createGlobalStyle`
+    body {
+        background-color: ${props => props.theme.body}
+    }
+`
