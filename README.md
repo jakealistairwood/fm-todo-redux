@@ -1,6 +1,6 @@
 ![Frontendmentor-Logo](https://github.com/jakealistairwood/github-jobs-api/blob/master/src/img/frontendmentor.svg)
 
-# FRONTENDMENTOR - TODO CHALLENGE 
+# FRONTENDMENTOR - TODO CHALLENGE (REACT/REDUX) 
 
 ![FM-TODO-Preview](https://github.com/jakealistairwood/fm-todo-redux/blob/master/src/assets/design/desktop-preview.jpg)
 
