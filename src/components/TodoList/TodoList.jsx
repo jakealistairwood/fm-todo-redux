@@ -9,6 +9,19 @@ const StyledDiv = styled.div`
     background-color: ${props => props.theme.todosBg}
 `
 
+const StyledButton = styled.button`
+    color: #9495A5;
+    font-size: 0.8rem;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;    
+
+    &:hover {
+        color: ${props => props.theme.textColor}
+    }
+`
+
 const TodoList = () => {
 
     const [ active, setActive ] = useState('all');
@@ -68,11 +81,11 @@ const TodoList = () => {
             <div className={styles.todoList__footer}>
                 <p>{todosRemaining} todos left</p>
                 <div className={styles.footer__todoStates}>
-                    <small className={`${styles.filters} ${applyAllTodosClass}`} onClick={() => setActive('all')}>All</small>
-                    <small className={`${styles.filters} ${applyActiveTodosClass}`} onClick={() => setActive('active')}>Active</small>
-                    <small className={`${styles.filters} ${applyCompletedTodosClass}`} onClick={() => setActive('completed')}>Completed</small>
+                    <StyledButton className={`${styles.filters} ${applyAllTodosClass}`} onClick={() => setActive('all')}>All</StyledButton>
+                    <StyledButton className={`${styles.filters} ${applyActiveTodosClass}`} onClick={() => setActive('active')}>Active</StyledButton>
+                    <StyledButton className={`${styles.filters} ${applyCompletedTodosClass}`} onClick={() => setActive('completed')}>Completed</StyledButton>
                 </div>
-                <button onClick={handleCompletedTodos}>Clear Completed</button>
+                <StyledButton className={styles.clearTodosBtn} onClick={handleCompletedTodos}>Clear Completed</StyledButton>
             </div>
         </StyledDiv>
     )

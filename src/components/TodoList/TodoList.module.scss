@@ -20,21 +20,30 @@
         padding: 10px 20px;
         height: 64px;
 
+        @media screen and (max-width: 500px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         p {
             color: #9495A5;
             font-size: 0.8rem;
-        }
-
-        .footer__todoStates {
 
             @media screen and (max-width: 500px) {
                 display: none;
             }
+        }
+
+        .footer__todoStates {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
 
             .filters {
                 margin: 0 10px;
                 font-weight: 700;
-                color: #9495A5;
+                // color: #9495A5;
                 font-size: 0.8rem;
                 cursor: pointer;
             }
@@ -44,13 +53,19 @@
             }
         }
 
-        button {
-            color: #9495A5;
-            font-size: 0.8rem;
-            background: none;
-            border: none;
-            outline: none;
-            cursor: pointer;
+        .clearTodosBtn {
+            @media screen and (max-width: 500px) {
+                display: none;
+            }
         }
+
+        // button {
+        //     color: #9495A5;
+        //     font-size: 0.8rem;
+        //     background: none;
+        //     border: none;
+        //     outline: none;
+        //     cursor: pointer;
+        // }
     }
 }
