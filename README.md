@@ -2,6 +2,8 @@
 
 # FRONTENDMENTOR - TODO CHALLENGE 
 
+![FM-TODO-Preview](https://github.com/jakealistairwood/fm-todo-redux/blob/master/src/assets/design/desktop-preview.jpg)
+
 This was a frontendmentor.io challenge in which I had to recreate a Todo app. This was my first introduction into using React Redux to manage the state in the application. 
 
 Via the useDispatch and useSelector hooks I was able to:
