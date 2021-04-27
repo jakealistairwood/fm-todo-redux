@@ -32,6 +32,7 @@ const TodoInput = () => {
                 title: todo
             })
         );
+        setTodo('');
     }
 
     return (

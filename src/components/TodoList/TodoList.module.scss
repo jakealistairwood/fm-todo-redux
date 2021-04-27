@@ -26,11 +26,21 @@
         }
 
         .footer__todoStates {
-            small {
+
+            @media screen and (max-width: 500px) {
+                display: none;
+            }
+
+            .filters {
                 margin: 0 10px;
                 font-weight: 700;
                 color: #9495A5;
                 font-size: 0.8rem;
+                cursor: pointer;
+            }
+
+            .active {
+                color: $brightBlue;
             }
         }
 

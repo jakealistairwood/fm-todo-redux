@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './TodoList.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import TodoItem from '../TodoItem';
@@ -10,6 +10,8 @@ const StyledDiv = styled.div`
 `
 
 const TodoList = () => {
+
+    const [ active, setActive ] = useState('all');
 
     const dispatch = useDispatch();
 
@@ -27,19 +29,48 @@ const TodoList = () => {
 
     const todosRemaining = todos.length - completedTodos.length;
 
+    // Improves usability to let user know which tab/list is currently active
+    const applyAllTodosClass = active === 'all' ? styles.active : '';
+    const applyActiveTodosClass = active === 'active' ? styles.active : '';
+    const applyCompletedTodosClass = active === 'completed' ? styles.active : '';
+
     return (
         <StyledDiv className={`${styles.todoList} ${styles.container}`}>
-            {
-                todos.map(todo => (
-                    <TodoItem title={todo.title} completed={todo.completed} key={todo.id} id={todo.id} />
-                ))
+            {/* Filter List functionality */}
+            {todos.length > 0 && active === 'all' ? 
+                todos.map(todo => {
+                    return (
+                        <TodoItem title={todo.title} completed={todo.completed} key={todo.id} id={todo.id} />
+                    )
+                })
+                : null
+            }
+            {todos.length > 0 && active === 'active' ? 
+                todos.map(todo => {
+                    return (
+                        todo.completed === false && (
+                            <TodoItem title={todo.title} completed={todo.completed} key={todo.id} id={todo.id} />
+                        )
+                    )
+                })
+                : null
+            }
+            {todos.length > 0 && active === 'completed' ? 
+                todos.map(todo => {
+                    return (
+                        todo.completed === true && (
+                            <TodoItem title={todo.title} completed={todo.completed} key={todo.id} id={todo.id} />
+                        )
+                    )
+                })
+                : null
             }
             <div className={styles.todoList__footer}>
                 <p>{todosRemaining} todos left</p>
                 <div className={styles.footer__todoStates}>
-                    <small>All</small>
-                    <small>Active</small>
-                    <small>Completed</small>
+                    <small className={`${styles.filters} ${applyAllTodosClass}`} onClick={() => setActive('all')}>All</small>
+                    <small className={`${styles.filters} ${applyActiveTodosClass}`} onClick={() => setActive('active')}>Active</small>
+                    <small className={`${styles.filters} ${applyCompletedTodosClass}`} onClick={() => setActive('completed')}>Completed</small>
                 </div>
                 <button onClick={handleCompletedTodos}>Clear Completed</button>
             </div>
